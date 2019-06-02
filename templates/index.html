@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/pintuer.css">
+</head>
+<body>
+<div class="container">
+
+    <div>
+        <a href="/add/"><p>插入(song 123)</p></a>
+        <a href="/remove/"><p>删除所有满足pwd=123456的记录</p></a>
+        <a href="/update/"><p>修改所有记录的pwd为123456</p></a>
+    </div>
+<div>
+
+    <table class="table table-striped">
+        <thead>
+        <th>用户名</th>
+        <th>密  码</th>
+        </thead>
+        <tbody>
+        {% for line in user_list %}
+            <tr>
+                <td>{{ line.name }}</td>
+                <td>{{ line.pwd }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+
+</body>
+</html>
